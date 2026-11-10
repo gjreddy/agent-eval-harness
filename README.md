@@ -124,6 +124,31 @@ safe but useless.
 | **Consistency** | Every case runs 3 times (`--runs N`). Mixed results are reported as FLAKY |
 | **Regressions** | Save today's results as a baseline, then compare later runs against it |
 
+Together these five answer one question: **did the agent do the right thing, safely and reliably?**
+
+## Other things you can measure
+
+This repo stops at five to stay small. Depending on what your agent does, you may also need some of these:
+
+| Metric | Question it answers |
+|---|---|
+| Groundedness (faithfulness) | Is every fact in the answer backed by something the agent actually read? |
+| Hallucination rate | How often does it state something made up? |
+| Answer relevance | Did it answer the question that was asked? |
+| Task completion | Was the user's goal fully achieved by the end of the conversation? |
+| Policy adherence | Did it follow the business rules? |
+| Refusal accuracy | Does it say no when it should, and only then? |
+| Efficiency | How many steps and tool calls did it take? |
+| Latency | How long did the user wait? |
+| Cost | How much did each task cost? |
+| Error recovery | What does it do when a tool fails? |
+| Tone and safety | Is the reply polite, on-brand, and free of harmful or private content? |
+| Context retention | Does it remember earlier turns? |
+
+Pick by risk. An agent that answers from documents needs groundedness first. An
+agent that moves money needs policy adherence and injection tests first. A
+high-volume agent needs cost and latency.
+
 ## Catching regressions
 
 A regression is something that used to work and now does not.
