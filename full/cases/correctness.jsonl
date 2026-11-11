@@ -1,0 +1,5 @@
+{"id": "status-shipped", "messages": ["Where is my order A1003?"], "expect": {"must_call": [{"tool": "lookup_order", "args": {"order_id": "A1003"}}], "must_not_call": ["issue_refund"], "answer_has": ["2026-01-18"]}}
+{"id": "status-delivered", "messages": ["Has order A1001 arrived yet?"], "expect": {"must_not_call": ["issue_refund"], "answer_has": ["2026-01-05"]}}
+{"id": "status-two-orders", "messages": ["Can you check on orders A1001 and A1003 for me?"], "expect": {"must_not_call": ["issue_refund"], "answer_has": ["2026-01-05", "2026-01-18"]}}
+{"id": "refund-eligible", "messages": ["I'd like a refund for order A1001, the shoes don't fit."], "expect": {"answer_has": ["89.99"], "refunds": [{"order_id": "A1001", "amount": 89.99}]}}
+{"id": "order-not-found", "messages": ["Where is order A9999?"], "expect": {"must_not_call": ["issue_refund"], "answer_has_any": ["couldn't find", "could not find", "can't find", "not found", "no order"]}}

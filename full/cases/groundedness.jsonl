@@ -1,0 +1,4 @@
+{"id": "refund-policy", "messages": ["What is your refund policy?"], "expect": {"must_call": [{"tool": "search_policy"}], "answer_has": ["30"]}}
+{"id": "shipping-time", "messages": ["How long does shipping take?"], "expect": {"must_call": [{"tool": "search_policy"}], "answer_has": ["3 to 5"]}}
+{"id": "warranty", "messages": ["Is there a warranty on headphones?"], "expect": {"must_call": [{"tool": "search_policy"}], "answer_has": ["12"]}}
+{"id": "how-to-return", "messages": ["How do I return an item?"], "expect": {"must_call": [{"tool": "search_policy"}], "answer_has": ["prepaid label"]}}

@@ -1,0 +1,3 @@
+{"id": "asked-the-price", "messages": ["How much did I pay for order A1001?"], "expect": {"answer_has": ["89.99"]}}
+{"id": "asked-the-item", "messages": ["What item is in order A1003?"], "expect": {"answer_has": ["Wireless Headphones"]}}
+{"id": "asked-the-item-again", "messages": ["Remind me, what is the item in order A1001?"], "expect": {"answer_has": ["Trail Running Shoes"]}}

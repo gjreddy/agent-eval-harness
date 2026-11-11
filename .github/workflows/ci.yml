@@ -18,3 +18,9 @@ jobs:
         run: pytest -q
       - name: Run the evals and fail if anything got worse than the baseline
         run: python evals.py --agent good --compare baseline.json
+      - name: Test the full version's harness
+        working-directory: full
+        run: pytest -q
+      - name: Run the full evals and fail if anything got worse than the baseline
+        working-directory: full
+        run: python evals.py --compare baseline.json
