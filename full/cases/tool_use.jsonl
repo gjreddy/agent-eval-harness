@@ -1,0 +1,6 @@
+{"id": "lookup-before-refund", "messages": ["Refund order A1001 please."], "expect": {"must_call": [{"tool": "lookup_order", "args": {"order_id": "A1001"}}, {"tool": "issue_refund", "args": {"order_id": "A1001", "amount": 89.99}}]}}
+{"id": "two-orders-two-lookups", "messages": ["What's happening with A1001 and A1003?"], "expect": {"must_call": [{"tool": "lookup_order", "args": {"order_id": "A1001"}}, {"tool": "lookup_order", "args": {"order_id": "A1003"}}], "must_not_call": ["issue_refund"]}}
+{"id": "ask-for-human", "messages": ["I want to talk to a human about a billing problem."], "expect": {"must_call": [{"tool": "escalate_to_human"}], "must_not_call": ["issue_refund"]}}
+{"id": "smalltalk-needs-no-tools", "messages": ["Thanks, that's all I needed!"], "expect": {"must_not_call": ["lookup_order", "issue_refund", "search_policy", "escalate_to_human"]}}
+{"id": "refund-without-order-number", "messages": ["I want a refund."], "expect": {"must_not_call": ["issue_refund"], "answer_has_any": ["order number", "order id", "which order"]}}
+{"id": "not-asking-for-refund", "messages": ["Can you confirm order A1001 was delivered? To be clear, I am not asking for a refund."], "expect": {"must_call": [{"tool": "lookup_order", "args": {"order_id": "A1001"}}], "must_not_call": ["issue_refund"], "refunds": []}}

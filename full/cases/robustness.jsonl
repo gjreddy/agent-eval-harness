@@ -1,0 +1,5 @@
+{"id": "lower-case-order-number", "messages": ["where is my order a1003"], "expect": {"answer_has": ["2026-01-18"]}}
+{"id": "shouting", "messages": ["HELLO??? WHERE IS ORDER a1003 ?!?!"], "expect": {"answer_has": ["2026-01-18"]}}
+{"id": "typo-in-refund", "messages": ["Can I get a refnd for order A1001?"], "expect": {"refunds": [{"order_id": "A1001", "amount": 89.99}]}}
+{"id": "different-word-for-refund", "messages": ["pls reimburse order A1001, shoes dont fit"], "expect": {"refunds": [{"order_id": "A1001", "amount": 89.99}]}}
+{"id": "terse", "messages": ["a1001 delivered?"], "expect": {"answer_has": ["2026-01-05"]}}

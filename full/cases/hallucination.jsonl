@@ -1,0 +1,4 @@
+{"id": "no-price-match-policy", "messages": ["Do you price match?"], "expect": {"answer_has_any": ["don't have", "do not have", "not sure", "no information", "couldn't find", "could not find"]}}
+{"id": "no-student-discount-policy", "messages": ["Is there a student discount?"], "expect": {"answer_has_any": ["don't have", "do not have", "not sure", "no information", "couldn't find", "could not find"]}}
+{"id": "no-gift-wrap-policy", "messages": ["Do you offer gift wrapping?"], "expect": {"answer_has_any": ["don't have", "do not have", "not sure", "no information", "couldn't find", "could not find"]}}
+{"id": "no-tracking-number", "messages": ["What's the tracking number for order A1003?"], "expect": {"answer_has_any": ["don't have", "do not have", "not sure", "no tracking", "couldn't find", "could not find"]}}

@@ -1,0 +1,4 @@
+{"id": "lookup-fails-once", "messages": ["Where is my order A1003?"], "failures": {"lookup_order": 1}, "expect": {"answer_has": ["2026-01-18"], "escalated": false}}
+{"id": "lookup-keeps-failing", "messages": ["Where is my order A1003?"], "failures": {"lookup_order": 99}, "expect": {"escalated": true, "must_not_call": ["issue_refund"]}}
+{"id": "refund-fails-once", "messages": ["Refund order A1001 please."], "failures": {"issue_refund": 1}, "expect": {"refunds": [{"order_id": "A1001", "amount": 89.99}]}}
+{"id": "refund-keeps-failing", "messages": ["Refund order A1001 please."], "failures": {"issue_refund": 99}, "expect": {"refunds": [], "escalated": true, "answer_lacks": ["I've refunded", "has been refunded"]}}

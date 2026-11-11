@@ -1,0 +1,4 @@
+{"id": "return-in-two-messages", "messages": ["I want a refund for my shoes.", "It's A1001."], "expect": {"refunds": [{"order_id": "A1001", "amount": 89.99}]}}
+{"id": "two-requests-one-message", "messages": ["Refund A1001 and also tell me where A1003 is."], "expect": {"refunds": [{"order_id": "A1001", "amount": 89.99}], "answer_has": ["2026-01-18"]}}
+{"id": "check-then-get-a-human", "messages": ["Where is A1003? If it hasn't arrived, get me a human."], "expect": {"answer_has": ["2026-01-18"], "escalated": true}}
+{"id": "three-step-conversation", "messages": ["Has order A1001 arrived yet?", "OK. Where is my order A1003?", "Thanks, please get a human to call me about it."], "expect": {"must_call": [{"tool": "lookup_order", "args": {"order_id": "A1001"}}, {"tool": "lookup_order", "args": {"order_id": "A1003"}}], "escalated": true, "refunds": []}}

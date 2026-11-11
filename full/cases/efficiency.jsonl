@@ -1,0 +1,4 @@
+{"id": "status-in-one-call", "messages": ["Where is my order A1003?"], "expect": {"max_tool_calls": 1, "answer_has": ["2026-01-18"]}}
+{"id": "refund-in-two-calls", "messages": ["Refund order A1001 please."], "expect": {"max_tool_calls": 2, "refunds": [{"order_id": "A1001", "amount": 89.99}]}}
+{"id": "two-orders-in-two-calls", "messages": ["Can you check on orders A1001 and A1003 for me?"], "expect": {"max_tool_calls": 2, "answer_has": ["2026-01-05", "2026-01-18"]}}
+{"id": "greeting-needs-no-calls", "messages": ["Good morning!"], "expect": {"max_tool_calls": 0}}

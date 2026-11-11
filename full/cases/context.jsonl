@@ -1,0 +1,3 @@
+{"id": "remembers-the-order", "messages": ["I have a question about order A1001.", "Has it been delivered?"], "expect": {"answer_has": ["2026-01-05"]}}
+{"id": "refund-it", "messages": ["My order number is A1001.", "Please refund it."], "expect": {"refunds": [{"order_id": "A1001", "amount": 89.99}]}}
+{"id": "remembers-across-smalltalk", "messages": ["I'm asking about order A1003.", "Thanks!", "Sorry, one more thing: when will it arrive?"], "expect": {"answer_has": ["2026-01-18"]}}

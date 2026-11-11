@@ -7,6 +7,10 @@ Python with no dependencies, it runs in under a second, and you do not need an
 API key: it comes with pretend agents that have known flaws, so you can watch
 the harness catch them.
 
+> **Want more than five measurements?** The [full version](full/) measures 18 things
+> (groundedness, hallucination, refusals, error recovery, cost, latency and more)
+> with the same approach. Start here, then go there.
+
 ## The idea in one minute
 
 The agent here is a customer-support bot for an online store. It has three tools:
@@ -128,7 +132,7 @@ Together these five answer one question: **did the agent do the right thing, saf
 
 ## Other things you can measure
 
-This repo stops at five to stay small. Depending on what your agent does, you may also need some of these:
+This version stops at five to stay small. Depending on what your agent does, you may also need some of these. The [full version](full/) measures all of them:
 
 | Metric | Question it answers |
 |---|---|
@@ -241,6 +245,7 @@ claude_agent.py   a real agent (optional)
 cases.jsonl       the 14 test cases
 baseline.json     saved results to compare against
 test_harness.py   tests for the harness itself
+full/             the full version: 18 measurements, 62 cases
 ```
 
 ## License
